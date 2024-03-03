@@ -43,10 +43,10 @@ public static class NonlinearEquationSolution
 
             newX = priorX - (1 / Math.Pow(priorX, 3)) * Function(priorX);
 
-            Console.WriteLine($"Iteration: {counter}");
-            Console.WriteLine($"Root: {priorX}\n");
-
             counter++;
+            
+            Console.WriteLine($"Iteration: {counter}");
+            Console.WriteLine($"Root: {newX}\n");
 
         } while (Math.Abs(newX- priorX) >= e);
 
