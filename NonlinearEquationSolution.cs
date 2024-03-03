@@ -55,7 +55,4 @@ public static class NonlinearEquationSolution
     }
 
     private static double Function(double x) => (Math.Pow(x, 3) - 10 - Math.Sqrt(x - 2));
-
-    private static double FunctionT(double x) => 1/(1+Math.Pow(x,4))-Math.Pow(x,2);
-
 }
