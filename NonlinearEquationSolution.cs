@@ -12,7 +12,7 @@ public static class NonlinearEquationSolution
         {
             c = (a + b)/2;
 
-            f = FunctionT(c) * FunctionT(x0);
+            f = Function(c) * Function(x0);
 
             if (f < 0) b = a;
 
