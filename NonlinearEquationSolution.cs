@@ -51,7 +51,7 @@ public static class NonlinearEquationSolution
         } while (Math.Abs(newX- priorX) >= e);
 
         Console.WriteLine($"Amount of iterations: {counter}");
-        Console.WriteLine($"Incoherency: {Math.Abs(newX - root)}");
+        Console.WriteLine($"Incoherency: {Math.Abs(newX - root)}\n");
     }
 
     private static double Function(double x) => (Math.Pow(x, 3) - 10 - Math.Sqrt(x - 2));
