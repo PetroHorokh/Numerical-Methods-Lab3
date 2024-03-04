@@ -10,13 +10,10 @@ public static class NonlinearEquationSolution
         int counter = 0;
         do
         {
-            c = (a + b)/2;
+            c = (a + b) / 2;
 
-            f = Function(c) * Function(x0);
-
-            if (f < 0) b = a;
-
-            a = c;
+            if (Function(c) * Function(a) < 0) b = c;
+            else a = c;
 
             counter++;
 
@@ -43,10 +40,10 @@ public static class NonlinearEquationSolution
 
             newX = priorX - (1 / Math.Pow(priorX, 3)) * Function(priorX);
 
-            counter++;
-            
             Console.WriteLine($"Iteration: {counter}");
-            Console.WriteLine($"Root: {newX}\n");
+            Console.WriteLine($"Root: {priorX}\n");
+
+            counter++;
 
         } while (Math.Abs(newX- priorX) >= e);
 
@@ -55,4 +52,5 @@ public static class NonlinearEquationSolution
     }
 
     private static double Function(double x) => (Math.Pow(x, 3) - 10 - Math.Sqrt(x - 2));
+
 }
